@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Sale — SIGNAL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0b0b0a; --bg-panel: #131210; --hairline: #2b2820;
+    --phosphor: #ffb400; --phosphor-dim: #7a5411;
+    --text: #ede6d6; --text-muted: #948c7a;
+    --font-display: 'IBM Plex Mono', monospace; --font-body: 'IBM Plex Sans', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg); color:var(--text); font-family:var(--font-body); line-height:1.65;}
+  a{color:var(--phosphor);}
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+  nav{position:sticky; top:0; background:rgba(11,11,10,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--hairline);}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:64px; max-width:1180px;}
+  .logo{font-family:var(--font-display); font-weight:700; letter-spacing:0.08em; font-size:18px; display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--text);}
+  .logo::before{content:''; width:8px; height:8px; background:var(--phosphor); border-radius:50%; box-shadow:0 0 8px 2px var(--phosphor);}
+  .back-link{font-family:var(--font-display); font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--text-muted); text-decoration:none;}
+  .back-link:hover{color:var(--phosphor);}
+  .page-head{padding:48px 0 24px; border-bottom:1px solid var(--hairline);}
+  .eyebrow{font-family:var(--font-display); font-size:12px; color:var(--phosphor); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px;}
+  .page-head h1{font-family:var(--font-display); font-size:clamp(24px,4vw,36px); text-transform:uppercase;}
+  .updated{color:var(--text-muted); font-size:13px; margin-top:10px;}
+  .disclaimer{
+    background:var(--bg-panel); border:1px solid var(--phosphor-dim); padding:16px 18px; margin:32px 0;
+    font-size:13.5px; color:var(--text-muted);
+  }
+  .content{padding:32px 0 80px;}
+  .content h2{font-family:var(--font-display); font-size:16px; text-transform:uppercase; margin:34px 0 12px; color:var(--phosphor);}
+  .content p, .content li{color:var(--text-muted); font-size:15px; margin-bottom:10px;}
+  .content ul, .content ol{padding-left:22px; margin-bottom:14px;}
+  .content strong{color:var(--text);}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><a class="logo" href="index.html">SIGNAL</a><a class="back-link" href="index.html">&larr; Back to site</a></div></nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Legal</div>
+    <h1>Terms of Sale</h1>
+    <p class="updated">Last updated: July 2026</p>
+  </div>
+</header>
+
+<div class="wrap content">
+  <div class="disclaimer">
+    This is a template intended as a starting point, not legal advice. Before relying on it commercially, have it reviewed by a solicitor — particularly the sections on returns for custom-built goods and international sales, which vary by jurisdiction and depend on details specific to your business.
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>These terms apply to orders placed through the SIGNAL website. By placing an order, you agree to these terms. Our contact address for any queries about an order is <strong>andrewclark0609@gmail.com</strong>.</p>
+
+  <h2>2. Orders and acceptance</h2>
+  <p>Placing an order through our checkout is an offer to buy. A contract is only formed once we accept your order — for example, by confirming it by email or beginning the build process. We may decline or cancel an order before that point, for example if a component becomes unavailable or a price was listed in error.</p>
+
+  <h2>3. Pricing and payment</h2>
+  <p>All prices are shown in GBP and include UK VAT where applicable. Shipping costs are calculated at checkout based on destination and are shown before you pay. Payment is processed securely by Stripe; we do not store your card details.</p>
+
+  <h2>4. Custom-configured builds</h2>
+  <p>Each SIGNAL unit is assembled to the specification you choose at checkout (storage, warranty tier, case colour). Under UK consumer law, the right to cancel an order within 14 days for a change of mind does <strong>not</strong> apply to goods made to a consumer's specification or clearly personalised. Because our units are configured per order, this exception is likely to apply — meaning change-of-mind cancellation may not be available once a build has entered production. This is a genuinely nuanced area of law and worth confirming with a solicitor, since the exact line depends on how much of the configuration is considered "personalisation."</p>
+  <p>Regardless of the above, your statutory rights for goods that are faulty, not as described, or not fit for purpose are not affected by this section.</p>
+
+  <h2>5. Cancelling before your build starts</h2>
+  <p>If you contact us before your unit has entered its burn-in process, we will generally cancel and refund your order in full. Once burn-in has begun, cancellation may not be possible as parts have been committed to your specific build.</p>
+
+  <h2>6. Delivery</h2>
+  <p>Estimated delivery times are shown at checkout and vary by destination (UK, Europe, North America, Rest of World). These are estimates, not guarantees — delays can occur due to courier or customs processes outside our control.</p>
+  <p>For international orders, you are responsible for any customs duties, import taxes, or handling fees charged by your country on arrival. These are not included in the price you pay us and are set by your local authorities.</p>
+
+  <h2>7. Warranty and faults</h2>
+  <p>Every unit includes the parts &amp; labour warranty selected at checkout (3-year standard, or 5-year if upgraded). This covers manufacturing defects and component failure under normal use. It does not cover damage from misuse, unauthorised modification, or accidental damage. To make a warranty claim, contact support with your order details.</p>
+  <p>This warranty is in addition to, and does not affect, your statutory legal rights as a consumer.</p>
+
+  <h2>8. Returns for faulty goods</h2>
+  <p>If your unit arrives faulty or not as described, contact us as soon as possible. Depending on the fault and how long you've had the item, you may be entitled to a repair, replacement, or refund under UK consumer law (or the equivalent consumer protection law in your country, if different).</p>
+
+  <h2>9. Limitation of liability</h2>
+  <p>We aren't liable for indirect or consequential losses (for example, lost data, lost time, or lost profits) arising from use of your unit. Nothing in these terms limits liability that cannot legally be limited, such as liability for death, personal injury, or fraud.</p>
+
+  <h2>10. Governing law</h2>
+  <p>These terms are governed by the law of England and Wales. If you're ordering from outside the UK, mandatory consumer protections in your own country may also apply and are not overridden by this section.</p>
+
+  <h2>11. Contact</h2>
+  <p>Questions about an order, a return, or these terms: <a href="support.html">contact support</a> or email <strong>andrewclark0609@gmail.com</strong>.</p>
+</div>
+
+</body>
+</html>
