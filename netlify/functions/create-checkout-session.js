@@ -12,12 +12,18 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 // Keep this in sync with the option lists in configure.html.
 // All prices in pence (GBP).
 const UNITS = {
+  "0.5": { name: "SIGNAL-0.5", price: 85000 },
   "1": { name: "SIGNAL-1", price: 120000 },
   "3": { name: "SIGNAL-3", price: 175000 },
   "9": { name: "SIGNAL-9", price: 225000 }
 };
 
 const STORAGE = {
+  "0.5": [
+    { label: "1TB NVMe", delta: 0 },
+    { label: "2TB NVMe", delta: 7500 },
+    { label: "1TB + 1TB NVMe", delta: 6500 }
+  ],
   "1": [
     { label: "1TB NVMe Gen4", delta: 0 },
     { label: "2TB NVMe Gen4", delta: 9500 },
