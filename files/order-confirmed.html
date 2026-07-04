@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order confirmed — SIGNAL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0b0b0a; --bg-panel: #131210; --hairline: #2b2820;
+    --phosphor: #ffb400; --phosphor-bright: #ffd166; --phosphor-dim: #7a5411;
+    --text: #ede6d6; --text-muted: #948c7a; --green-good: #7fbf6b;
+    --font-display: 'IBM Plex Mono', monospace; --font-body: 'IBM Plex Sans', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg); color:var(--text); font-family:var(--font-body); line-height:1.5;}
+  a{color:inherit;}
+  .wrap{max-width:640px; margin:0 auto; padding:0 24px;}
+  nav{position:sticky; top:0; background:rgba(11,11,10,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--hairline);}
+  nav .wrap{display:flex; align-items:center; height:64px;}
+  .logo{font-family:var(--font-display); font-weight:700; letter-spacing:0.08em; font-size:18px; display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--text);}
+  .logo::before{content:''; width:8px; height:8px; background:var(--phosphor); border-radius:50%; box-shadow:0 0 8px 2px var(--phosphor);}
+  .content{padding:96px 0; text-align:center;}
+  .eyebrow{font-family:var(--font-display); font-size:12px; color:var(--green-good); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;}
+  h1{font-family:var(--font-display); font-size:clamp(26px,4vw,38px); text-transform:uppercase; margin-bottom:18px;}
+  p{color:var(--text-muted); margin-bottom:12px;}
+  .terminal{
+    text-align:left; background:var(--bg-panel); border:1px solid var(--hairline); padding:20px 22px;
+    font-family:var(--font-display); font-size:12.5px; color:var(--phosphor-dim); line-height:2; margin:32px 0;
+  }
+  .terminal .ok{color:var(--green-good);}
+  .btn{
+    display:inline-block; font-family:var(--font-display); text-transform:uppercase; font-size:13px;
+    letter-spacing:0.05em; background:var(--phosphor); color:#0b0b0a; padding:15px 28px; text-decoration:none;
+    font-weight:600; margin-top:12px;
+  }
+</style>
+</head>
+<body>
+<nav><div class="wrap"><a class="logo" href="index.html">SIGNAL</a></div></nav>
+<div class="wrap content">
+  <div class="eyebrow">Payment received</div>
+  <h1>Your build is queued for the bench</h1>
+  <p>We've got your order and payment confirmation. You'll get an email receipt from Stripe, and a separate message from us once your unit enters its 72-hour burn-in.</p>
+
+  <div class="terminal">
+    [00:00:01] PAYMENT <span class="ok">CONFIRMED</span><br>
+    [00:00:02] ORDER <span class="ok">QUEUED</span> for build schedule<br>
+    [00:00:03] NEXT STEP: burn-in report emailed on completion<br>
+  </div>
+
+  <p>Questions about your order? Our support team can look it up from your confirmation email.</p>
+  <a class="btn" href="support.html">Contact support</a>
+</div>
+</body>
+</html>
