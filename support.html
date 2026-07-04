@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support — SIGNAL</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0b0b0a;
+    --bg-panel: #131210;
+    --bg-panel-raised: #1c1a15;
+    --hairline: #2b2820;
+    --phosphor: #ffb400;
+    --phosphor-bright: #ffd166;
+    --phosphor-dim: #7a5411;
+    --text: #ede6d6;
+    --text-muted: #948c7a;
+    --green-good: #7fbf6b;
+    --font-display: 'IBM Plex Mono', monospace;
+    --font-body: 'IBM Plex Sans', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg); color:var(--text); font-family:var(--font-body); line-height:1.5;}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--phosphor); outline-offset:3px;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 24px;}
+
+  nav{position:sticky; top:0; z-index:20; background:rgba(11,11,10,0.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--hairline);}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:64px;}
+  .logo{font-family:var(--font-display); font-weight:700; letter-spacing:0.08em; font-size:18px; display:flex; align-items:center; gap:8px; text-decoration:none; color:var(--text);}
+  .logo::before{content:''; width:8px; height:8px; background:var(--phosphor); border-radius:50%; box-shadow:0 0 8px 2px var(--phosphor);}
+  .back-link{font-family:var(--font-display); font-size:12px; letter-spacing:0.05em; text-transform:uppercase; color:var(--text-muted); text-decoration:none;}
+  .back-link:hover{color:var(--phosphor);}
+
+  .page-head{padding:48px 0 32px; border-bottom:1px solid var(--hairline);}
+  .eyebrow{font-family:var(--font-display); font-size:12px; color:var(--phosphor); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; display:flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:''; width:20px; height:1px; background:var(--phosphor-dim);}
+  .page-head h1{font-family:var(--font-display); font-size:clamp(28px,4.5vw,44px); text-transform:uppercase; letter-spacing:-0.01em;}
+  .page-head p{color:var(--text-muted); margin-top:12px; max-width:560px;}
+
+  .layout{padding:48px 0 96px; display:grid; grid-template-columns:1fr 320px; gap:48px; align-items:start;}
+  @media (max-width:900px){ .layout{grid-template-columns:1fr;} }
+
+  .field{margin-bottom:22px;}
+  .field label{display:block; font-family:var(--font-display); font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); margin-bottom:8px;}
+  .field input, .field select, .field textarea{
+    width:100%; background:var(--bg-panel); border:1px solid var(--hairline); color:var(--text);
+    padding:13px 14px; font-family:var(--font-body); font-size:14.5px; transition:border-color .15s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{border-color:var(--phosphor-dim); outline:none;}
+  .field textarea{resize:vertical; min-height:140px;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  @media (max-width:600px){ .field-row{grid-template-columns:1fr;} }
+
+  .submit-btn{
+    font-family:var(--font-display); text-transform:uppercase; font-size:13px; letter-spacing:0.05em;
+    background:var(--phosphor); color:#0b0b0a; border:none; padding:15px 28px;
+    font-weight:600; cursor:pointer; transition:background .15s;
+  }
+  .submit-btn:hover{background:var(--phosphor-bright);}
+
+  .form-note{font-size:12px; color:var(--text-muted); margin-top:14px; max-width:480px;}
+
+  .sidebar-panel{border:1px solid var(--hairline); background:var(--bg-panel); padding:24px;}
+  .sidebar-panel h2{font-family:var(--font-display); font-size:13px; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-muted); margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--hairline);}
+  .sidebar-row{margin-bottom:20px;}
+  .sidebar-row h3{font-family:var(--font-display); font-size:13.5px; text-transform:uppercase; margin-bottom:4px; letter-spacing:0.02em;}
+  .sidebar-row p{font-size:13.5px; color:var(--text-muted);}
+  .sidebar-row a{color:var(--phosphor); text-decoration:none;}
+  .sidebar-row a:hover{text-decoration:underline;}
+
+  .confirm{
+    display:none; margin-top:18px; padding:14px 16px; border:1px solid var(--phosphor-dim);
+    font-family:var(--font-display); font-size:12px; color:var(--green-good);
+  }
+  .confirm.show{display:block;}
+  .confirm.error{border-color:#8a2f28; color:var(--red-alert, #ff5d4d);}
+  .submit-btn:disabled{opacity:0.6; cursor:not-allowed;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="index.html">SIGNAL</a>
+    <a class="back-link" href="index.html">&larr; Back to site</a>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="wrap">
+    <div class="eyebrow">Support</div>
+    <h1>Talk to someone who reads the logs</h1>
+    <p>Whether it's a question before you order or something on an existing unit, tell us what's going on and we'll get back to you.</p>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <div>
+    <form id="supportForm">
+      <div class="field-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="_replyto" required>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="unit">Which build (if any)</label>
+          <select id="unit" name="unit">
+            <option value="Not sure / no unit yet">Not sure / no unit yet</option>
+            <option value="SIGNAL-0.5">SIGNAL-0.5</option>
+            <option value="SIGNAL-1">SIGNAL-1</option>
+            <option value="SIGNAL-3">SIGNAL-3</option>
+            <option value="SIGNAL-9">SIGNAL-9</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="topic">Topic</label>
+          <select id="topic" name="topic">
+            <option>Question before ordering</option>
+            <option>Order status</option>
+            <option>Warranty / repair</option>
+            <option>Something else</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required placeholder="What's going on?"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">Send message</button>
+      <p class="form-note" id="formNote">Sent straight to our support inbox — no email app needed.</p>
+      <div class="confirm" id="confirmMsg">&gt; MESSAGE SENT — we'll reply to the email address you gave us within one business day.</div>
+      <div class="confirm error" id="errorMsg">&gt; SOMETHING WENT WRONG — please try again, or email andrewclark0609@gmail.com directly.</div>
+    </form>
+  </div>
+
+  <div class="sidebar-panel">
+    <h2>Other ways to reach us</h2>
+    <div class="sidebar-row">
+      <h3>Email direct</h3>
+      <p><a href="mailto:andrewclark0609@gmail.com">andrewclark0609@gmail.com</a></p>
+    </div>
+    <div class="sidebar-row">
+      <h3>Response time</h3>
+      <p>Within one business day, usually sooner.</p>
+    </div>
+    <div class="sidebar-row">
+      <h3>Warranty claims</h3>
+      <p>Include your unit and order date — it speeds things up.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const FORM_ENDPOINT = 'https://formspree.io/f/mpqgkeqr';
+
+  document.getElementById('supportForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+
+    const form = e.target;
+    const submitBtn = document.getElementById('submitBtn');
+    const confirmMsg = document.getElementById('confirmMsg');
+    const errorMsg = document.getElementById('errorMsg');
+    const formNote = document.getElementById('formNote');
+
+    confirmMsg.classList.remove('show');
+    errorMsg.classList.remove('show');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    const topic = document.getElementById('topic').value;
+    const unit = document.getElementById('unit').value;
+    const formData = new FormData(form);
+    formData.set('_subject', 'Support: ' + topic + ' (' + unit + ')');
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        confirmMsg.classList.add('show');
+        formNote.style.display = 'none';
+        form.reset();
+        submitBtn.textContent = 'Message sent';
+      } else {
+        errorMsg.classList.add('show');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send message';
+      }
+    } catch (err) {
+      errorMsg.classList.add('show');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send message';
+    }
+  });
+</script>
+</body>
+</html>
