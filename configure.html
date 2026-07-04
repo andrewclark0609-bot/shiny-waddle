@@ -168,6 +168,23 @@
 
 <script>
   const UNITS = {
+    "0.5": {
+      id: "SIGNAL-0.5", sub: "1080p, high settings", price: 850,
+      locked: [
+        ["CPU","Ryzen 5 5500"],
+        ["GPU","RTX 5060 8GB (ASUS Dual OC)"],
+        ["Memory","16GB DDR4 3200"],
+        ["Cooler","Stock (Wraith Stealth)"],
+        ["Motherboard","ASUS TUF B550-Plus WiFi"],
+        ["PSU","MSI MAG A550BN 550W 80+ Bronze"],
+        ["Case shell","FOIFKIN F1 ARGB Mid-Tower"]
+      ],
+      storage: [
+        {label:"1TB NVMe", sub:"Netac NV3000, up to 3,100MB/s", delta:0, def:true},
+        {label:"2TB NVMe", sub:"Netac NV3000, up to 3,100MB/s", delta:75},
+        {label:"1TB + 1TB NVMe", sub:"Dual-drive, OS + library", delta:65}
+      ]
+    },
     "1": {
       id: "SIGNAL-1", sub: "1080p–1440p, high settings", price: 1200,
       locked: [
