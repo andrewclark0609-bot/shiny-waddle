@@ -12,10 +12,10 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 // Keep this in sync with the option lists in configure.html.
 // All prices in pence (GBP).
 const UNITS = {
-  "0.5": { name: "SIGNAL-0.5", price: 95000 },
-  "1": { name: "SIGNAL-1", price: 135000 },
-  "3": { name: "SIGNAL-3", price: 185000 },
-  "9": { name: "SIGNAL-9", price: 245000 }
+  "0.5": { name: "SIGNAL-0.5", price: 110000 },
+  "1": { name: "SIGNAL-1", price: 150000 },
+  "3": { name: "SIGNAL-3", price: 200000 },
+  "9": { name: "SIGNAL-9", price: 260000 }
 };
 
 const STORAGE = {
